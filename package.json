@@ -1,0 +1,19 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "clt": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clear": "^0.1.0",
+    "inquirer": "^7.3.3",
+    "minimist": "^1.2.5"
+  }
+}
