@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@ionic/core": "^5.5.1",
+    "@ionic/vue": "^5.5.1",
+    "@ionic/vue-router": "^5.5.1",
+    "ionicons": "^5.2.3",
+    "mitt": "^2.1.0",
+    "tweetnacl": "^1.0.3",
+    "tweetnacl-util": "^0.15.1",
+    "uuid": "^8.3.1",
+    "vue": "^3.0.3",
+    "vue-router": "^3.4.9"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.5.9",
+    "@vue/compiler-sfc": "^3.0.3",
+    "vue-loader": "^16.1.0"
+  }
+}

@@ -1,0 +1,11 @@
+export { createGesture } from "@ionic/core"
+
+export { DataBinding } from "./modules/DataBinding"
+export { Detail } from "./modules/Detail"
+export { Navigation } from "./modules/Navigation"
+export { Platform } from "./modules/Platform"
+export { User } from "./modules/User"
+export { Modal } from "./modules/Modal"
+export { PopOver } from "./modules/PopOver"
+export { Translator } from "./modules/Translator"
+export { Storage } from "./modules/Storage"

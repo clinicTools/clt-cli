@@ -3,10 +3,10 @@ let args = require("minimist")(process.argv.slice(2));
 let axios = require("axios").default
 let chalk = require("chalk");
 let version = require(__dirname + "/package.json").version;
-let commands = ["build", "config", "publish", "serve", "update"];
+let commands = ["build", "config", "publish", "serve", "update", "install"];
 
 (async () => {
-    if(args.v) {
+    if(args.v || args._.length == 0) {
         console.log(require("boxen")(
             chalk`clinicTools CLI` + "\n" +
             chalk`v{bold ${version}}` + "\n" +

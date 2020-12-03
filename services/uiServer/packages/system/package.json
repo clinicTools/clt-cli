@@ -1,0 +1,9 @@
+{
+  "dependencies": {},
+  "deprecated": false,
+  "description": "",
+  "devDependencies": {},
+  "main": "index.js",
+  "name": "system",
+  "version": "1.0.0"
+}
