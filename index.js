@@ -3,11 +3,22 @@ let args = require("minimist")(process.argv.slice(2));
 let axios = require("axios").default
 let chalk = require("chalk");
 let version = require(__dirname + "/version.json").version;
-let commands = ["build", "config", "publish", "serve", "update"]
+let commands = ["build", "config", "publish", "serve", "update"];
 
 (async () => {
     if(args.v) {
-        console.log(`v${version}`);
+        console.log(require("boxen")(
+            chalk`clinicTools CLI` + "\n" +
+            chalk`v{bold ${version}}` + "\n" +
+            chalk`© 2020 clinicTools GmbH`
+            , {
+                padding: 1,
+                margin: 1,
+                align: 'left',
+                borderColor: 'yellow',
+                borderStyle: 'round'
+            }
+        ));
         return;
     }
 
