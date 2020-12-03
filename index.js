@@ -10,7 +10,7 @@ let commands = ["build", "config", "publish", "serve", "update", "install"];
         console.log(require("boxen")(
             chalk`clinicTools CLI` + "\n" +
             chalk`v{bold ${version}}` + "\n" +
-            chalk`© 2020 clinicTools GmbH`
+            chalk`© ${new Date().getFullYear()} clinicTools GmbH`
             , {
                 padding: 1,
                 margin: 1,
@@ -21,8 +21,9 @@ let commands = ["build", "config", "publish", "serve", "update", "install"];
         ));
         return;
     }
-
-    await updateCheck()
+    if(args._[0] !== "update") {
+        await updateCheck();
+    }
     if (commands.includes(args._[0])) {
         await require(`${__dirname}/lib/${args._[0]}.js`).default(args);
     } else {
