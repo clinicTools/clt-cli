@@ -1,15 +1,14 @@
 {
-  "name": "cli",
-  "version": "1.0.0",
-  "description": "",
+  "name": "clt-cli",
+  "version": "1.0.4",
+  "description": "ClinicTools CLI",
   "main": "index.js",
   "bin": {
     "clt": "index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ClinicTools GmbH",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0",

@@ -32,14 +32,13 @@ let commands = ["build", "config", "publish", "serve", "update"];
 
 async function updateCheck() {
     try {
-        let res = await axios.get("https://raw.githubusercontent.com/clinicTools/clt-cli/main/version.json", {
+        let res = await axios.get("https://raw.githubusercontent.com/clinicTools/clt-cli/main/package.json", {
             headers: {
                 'Cache-Control': 'no-cache',
                 'Pragma': 'no-cache',
                 'Expires': '0',
             }
         });
-        console.log(res.data.version);
         let onlineVersion = res.data.version;
         if (version !== onlineVersion) {
             console.log(require("boxen")(
