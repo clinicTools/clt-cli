@@ -3,21 +3,32 @@ let args = require("minimist")(process.argv.slice(2));
 let axios = require("axios").default
 let chalk = require("chalk");
 let version = require(__dirname + "/version.json").version;
+let commands = ["build", "config", "publish", "serve", "update"]
 
 (async () => {
-    await updateCheck()
+    if(args.v) {
+        console.log(`v${version}`);
+        return;
+    }
 
-    if (["config", "serve", "publish", "build", "update"].includes(args._[0])) {
+    await updateCheck()
+    if (commands.includes(args._[0])) {
         await require(`${__dirname}/lib/${args._[0]}.js`).default(args);
     } else {
-        console.error(chalk`{red Command unknown:} command`);
+        console.error(chalk`{red Command unknown:} ${process.argv.slice(2).join(" ")}`);
     }
 })();
 
 async function updateCheck() {
     try {
-        let res = await axios.get("https://raw.githubusercontent.com/clinicTools/clt-cli/main/version.json");
-        
+        let res = await axios.get("https://raw.githubusercontent.com/clinicTools/clt-cli/main/version.json", {
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+            }
+        });
+        console.log(res.data.version);
         let onlineVersion = res.data.version;
         if (version !== onlineVersion) {
             console.log(require("boxen")(
