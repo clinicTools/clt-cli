@@ -1,13 +1,12 @@
 {
   "name": "clt-cli",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "ClinicTools CLI",
   "main": "index.js",
   "bin": {
     "clt": "index.js"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "author": "ClinicTools GmbH",
   "license": "ISC",
   "dependencies": {
@@ -16,6 +15,7 @@
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "cli-progress": "^3.8.2",
+    "fs-extra": "^9.0.1",
     "inquirer": "^7.3.3",
     "minimist": "^1.2.5"
   }
