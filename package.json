@@ -1,6 +1,6 @@
 {
   "name": "clt-cli",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "ClinicTools CLI",
   "main": "index.js",
   "bin": {

@@ -59,5 +59,6 @@ async function updateCheck() {
                 }
             ));
         }
-    } catch {}
+    } catch (e){
+    }
 }
