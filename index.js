@@ -24,6 +24,7 @@ let commands = ["config", "serve", "update", "install"];
     if(args._[0] !== "update") {
         await updateCheck();
     }
+
     if (commands.includes(args._[0])) {
         await require(`${__dirname}/lib/${args._[0]}.js`).default(args);
     } else {
@@ -44,6 +45,7 @@ async function updateCheck() {
                 'Expires': '0',
             }
         });
+        
         let onlineVersion = res.data.version;
         if (version !== onlineVersion) {
             console.log(require("boxen")(
@@ -60,5 +62,6 @@ async function updateCheck() {
             ));
         }
     } catch (e){
+        console.log(e)
     }
 }
