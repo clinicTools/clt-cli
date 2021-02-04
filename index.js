@@ -3,7 +3,7 @@ let args = require("minimist")(process.argv.slice(2));
 let axios = require("axios").default
 let chalk = require("chalk");
 let version = require(__dirname + "/package.json").version;
-let commands = ["config", "serve", "update", "install"];
+let commands = ["config", "serve", "update", "install", "publish"];
 
 (async () => {
     if(args.v || args._.length == 0) {
