@@ -3,7 +3,7 @@ let args = require("minimist")(process.argv.slice(2));
 let axios = require("axios").default
 let chalk = require("chalk");
 let version = require(__dirname + "/package.json").version;
-let commands = ["build", "config", "publish", "serve", "update", "install"];
+let commands = ["config", "serve", "update", "install"];
 
 (async () => {
     if(args.v || args._.length == 0) {
@@ -28,9 +28,13 @@ let commands = ["build", "config", "publish", "serve", "update", "install"];
         await require(`${__dirname}/lib/${args._[0]}.js`).default(args);
     } else {
         console.error(chalk`{red Command unknown:} ${process.argv.slice(2).join(" ")}`);
+
+        console.log("\r\nUsage: clt <command>\r\n");
+        for(let i = 0; i < commands.length; i++) {
+            console.log("  clt " + commands[i] + await require(`${__dirname}/lib/${commands[i]}.js`).description());
+        }
     }
 })();
-
 async function updateCheck() {
     try {
         let res = await axios.get("https://raw.githubusercontent.com/clinicTools/clt-cli/main/package.json", {
