@@ -38,7 +38,7 @@ let commands = ["config", "serve", "update", "install"];
 })();
 async function updateCheck() {
     try {
-        let res = await axios.get("https://raw.githubusercontent.com/clinicTools/clt-cli/main/package.json", {
+        let res = await axios.get(`https://raw.githubusercontent.com/clinicTools/clt-cli/main/package.json?${(new Date()).getTime()}`, {
             headers: {
                 'Cache-Control': 'no-cache',
                 'Pragma': 'no-cache',
