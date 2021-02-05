@@ -1,7 +1,9 @@
 # clinicTools CLI
 
 ### Installation
-`npm install -g git+https://github.com/clinicTools/clt-cli.git`
+
+
+`npm install -g https://github.com/clinicTools/clt-cli/tarball/main`
 
 ### Usage
 
