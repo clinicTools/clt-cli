@@ -1,4 +1,7 @@
 #! /usr/bin/env node
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 let args = require("minimist")(process.argv.slice(2));
 let axios = require("axios").default
 let chalk = require("chalk");
