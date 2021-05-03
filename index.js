@@ -48,7 +48,7 @@ let commands = ["config", "dev", "update", "install", "build", "publish"];
 async function updateCheck() {
   try {
     let res = await axios.get(
-      `https://raw.githubusercontent.com/clinicTools/clt-cli/main/package.json?${new Date().getTime()}`,
+      `https://dev.clinic.tools/cli/versions.json?${new Date().getTime()}`,
       {
         headers: {
           "Cache-Control": "no-cache",
@@ -57,14 +57,13 @@ async function updateCheck() {
         },
       }
     );
-
-    let onlineVersion = res.data.version;
+    let onlineVersion = res.data.latest;
     if (version !== onlineVersion) {
       console.log(
         require("boxen")(
           chalk`Update available {dim ${version}} → {green ${onlineVersion}}` +
             "\n" +
-            chalk`Run {cyan clt update} to update`,
+            chalk`Run {cyan clt install cli@latest} to update`,
           {
             padding: 1,
             margin: 1,
